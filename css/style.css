@@ -1,0 +1,306 @@
+:root {
+  --main-beige: beige;
+  --main-yellow: #f8fd6a;
+  --main-secondary-yellow: #fff047;
+  --main-brown: #95732e;
+  --main-secondary-brown: #3e3218;
+  --main-red: #e61f5e;
+  --main-green: rgb(0, 190, 0);
+
+  --poppin-font: "Poppins", sans-serif;
+
+  --beige: var(--main-beige);
+  --yellow: var(--main-yellow);
+  --yellow2: var(--main-secondary-yellow);
+  --brown: var(--main-brown);
+  --brown2: var(--main-secondary-brown);
+  --red: var(--main-red);
+  --green: var(--main-green);
+  --text-font: var(--poppin-font);
+}
+
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--beige);
+}
+
+h2 {
+  color: var(--brown2); /* Default color for all links */
+  font-family: var(--text-font);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* NAVBAR  (header) */
+nav a {
+  color: var(--brown2); /* Default color for all links */
+  font-family: var(--text-font);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav .nav-link.active {
+  color: var(--brown2) !important; /* Force apply the brown color */
+  font-weight: bold;
+}
+
+/* INDEX */
+.center-container {
+  height: calc(100vh - 70px); /* Adjust 70px based on navbar height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PERCENTAGE SECTION */
+.breakdown-box {
+  border: 2px solid var(--brown2);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  background-color: var(--main-yellow);
+  color: var(--main-secondary-brown);
+}
+
+#percentageForm {
+  max-width: 600px;
+}
+
+/* LOGO */
+.logo-img {
+  width: 250px;
+  height: 250px;
+}
+
+/* INPUT SECTION*/
+.bar {
+  width: 250px;
+}
+
+.center {
+  display: flex; /* This is essential */
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group {
+  width: auto; /* Adjust width as needed */
+}
+
+.input-group-text {
+  background-color: var(--yellow);
+  border: 2px solid var(--brown);
+  /* top left right  bottom right left */
+  border-radius: 10px 0 0 10px;
+  color: var(--brown);
+  font-weight: bold;
+  font-family: var(--text-font);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-group-reverse {
+  background-color: var(--yellow) !important;
+  border: 2px solid var(--brown) !important;
+  border-radius: 0 10px 10px 0 !important;
+  color: var(--brown) !important;
+  font-weight: bold !important;
+  font-family: var(--text-font) !important;
+  padding: 10px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.form-control.bar {
+  border: 2px solid var(--brown);
+  border-radius: 0 10px 10px 0; /* Rounded on the right side */
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-control.bar:focus {
+  border-color: var(--brown);
+  box-shadow: 0 0 8px rgba(200, 205, 53, 0.5);
+  outline: none;
+}
+
+/* BUTTON */
+.btns {
+  background-color: var(--beige);
+  font-family: var(--text-font);
+  color: var(--brown);
+  font-weight: bold;
+  transition: 0.3s ease, color 0.3s ease;
+  border: solid 2px var(--brown);
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btns:hover {
+  font-family: var(--text-font);
+  border: solid 2px var(--brown);
+  background-color: var(--yellow);
+  color: var(--brown);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+}
+
+.btns:active {
+  font-family: var(--text-font) !important;
+  background-color: var(--yellow) !important;
+  color: var(--brown) !important;
+  border: solid 2px var(--brown) !important;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(1px) !important;
+}
+
+/* COIN FLIP */
+
+.coin-container {
+  position: absolute; /* Absolute position inside a relative parent */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it perfectly */
+  text-align: center;
+}
+
+.coin {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out;
+  margin: 0 auto;
+  backface-visibility: hidden;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  letter-spacing: 2px;
+}
+
+.coin:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.coin.flip {
+  animation: spin 1s cubic-bezier(0.4, 2.5, 0.6, 0.5);
+}
+
+.coin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: rotateY(0deg);
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .center-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .col-md-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .breakdown-box {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 5px;
+    border: 4px solid var(--brown2);
+  }
+
+  .bar {
+    width: 100%;
+  }
+
+  .input-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .input-group-text,
+  .input-group-reverse,
+  .form-control.bar {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .btns {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .logo-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .coin-container {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .coin {
+    width: 120px;
+    height: 120px;
+  }
+
+  .result {
+    font-size: 20px;
+  }
+}
