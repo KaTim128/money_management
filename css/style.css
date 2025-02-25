@@ -4,8 +4,8 @@
   --main-secondary-yellow: #fff047;
   --main-brown: #95732e;
   --main-secondary-brown: #3e3218;
-  --main-red: #e61f5e;
-  --main-green: rgb(0, 190, 0);
+  --main-red: #ff0095;
+  --main-green: #00be00;
 
   --poppin-font: "Poppins", sans-serif;
 
@@ -40,20 +40,20 @@ h2 {
 
 /* NAVBAR  (header) */
 nav a {
-  color: var(--brown2); /* Default color for all links */
+  color: var(--brown2);
   font-family: var(--text-font);
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav .nav-link.active {
-  color: var(--brown2) !important; /* Force apply the brown color */
+  color: var(--brown2) !important;
   font-weight: bold;
 }
 
 /* INDEX */
 .center-container {
-  height: calc(100vh - 70px); /* Adjust 70px based on navbar height */
+  height: calc(100vh - 70px);
   display: flex;
   justify-content: center;
   align-items: center;

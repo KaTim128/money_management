@@ -1,2 +1,6 @@
-<!-- tells the amount that 
- should be spent a day or a week or a month -->
+<?php
+require('header.php');
+?>
+
+</body>
+</html>

@@ -1,3 +1,13 @@
+<?php
+require('connection.php');
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+} else {
+    echo "✅ Welcome! Your User ID is: " . $_SESSION['user_id'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,12 +31,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                <div class="navbar-nav"><!-- current script's path output: index.php -->
-                    <a class="nav-link mx-2 my-1 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>"
+                <div class="navbar-nav">
+                    <a class="nav-link mx-2 my-1 <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == 'percentage.php') ? 'active' : ''; ?>"
                         href="index.php">Money Manager</a>
-
                     <a class="nav-link mx-2 my-1 <?php echo basename($_SERVER['PHP_SELF']) == 'coin_flip.php' ? 'active' : ''; ?>"
                         href="coin_flip.php">Coin Flip</a>
+                    <a class="nav-link mx-2 my-1 " href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
