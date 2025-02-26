@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="center-container container">
     <div class="row">
         <?php if ($showResults): ?>
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-12 d-flex justify-content-center mt-3">
                 <div class="breakdown-box mb-4">
                     <h4 style="text-decoration:underline">Salary Breakdown</h4>💵💰💴💸🪙💳
                     <p><strong>Salary (100%): *RM <?= number_format($total_salary, 2) . '*' ?></strong></p>
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php if (!empty($error)): ?>
                         <p class="justify-content-center align-items-center d-flex">
                             <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTQzM2lhNGhyaWd0bWhtcHl6NDZ3cG1qamIwazBlajZ0OGVtam41ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W8hVGGjOjV82Rh6Oyi/giphy.gif"
-                                style="max-height: 300px; border-radius:5px; border: 4px solid var(--brown);">
+                                style="max-height: 300px; border-radius:5px; border: 4px solid var(--grey2);">
                         </p>
                         <div style="color:#ff0095; font-weight: bold; text-align:center"><?= $error ?></div>
                     <?php elseif (!empty($edit)): ?>
@@ -112,3 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
+
+<?php
+require('footer.php');
+?>

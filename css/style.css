@@ -1,7 +1,7 @@
 :root {
   --main-beige: beige;
-  --main-yellow: #f8fd6a;
-  --main-secondary-yellow: #fff047;
+  --main-grey: #ecec9a;
+  --main-secondary-grey: #efe8a8;
   --main-brown: #95732e;
   --main-secondary-brown: #3e3218;
   --main-red: #ff0095;
@@ -10,8 +10,8 @@
   --poppin-font: "Poppins", sans-serif;
 
   --beige: var(--main-beige);
-  --yellow: var(--main-yellow);
-  --yellow2: var(--main-secondary-yellow);
+  --grey: var(--main-grey);
+  --grey2: var(--main-secondary-grey);
   --brown: var(--main-brown);
   --brown2: var(--main-secondary-brown);
   --red: var(--main-red);
@@ -26,9 +26,18 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   background-color: var(--beige);
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -53,10 +62,14 @@ nav .nav-link.active {
 
 /* INDEX */
 .center-container {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 50px);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container-fluid {
+  flex: 1;
 }
 
 /* PERCENTAGE SECTION */
@@ -67,7 +80,7 @@ nav .nav-link.active {
   width: 100%;
   max-width: 600px;
   text-align: center;
-  background-color: var(--main-yellow);
+  background-color: var(--main-grey);
   color: var(--main-secondary-brown);
 }
 
@@ -97,7 +110,7 @@ nav .nav-link.active {
 }
 
 .input-group-text {
-  background-color: var(--yellow);
+  background-color: var(--beige);
   border: 2px solid var(--brown);
   /* top left right  bottom right left */
   border-radius: 10px 0 0 10px;
@@ -111,7 +124,7 @@ nav .nav-link.active {
 }
 
 .input-group-reverse {
-  background-color: var(--yellow) !important;
+  background-color: var(--beige) !important;
   border: 2px solid var(--brown) !important;
   border-radius: 0 10px 10px 0 !important;
   color: var(--brown) !important;
@@ -153,7 +166,7 @@ nav .nav-link.active {
 .btns:hover {
   font-family: var(--text-font);
   border: solid 2px var(--brown);
-  background-color: var(--yellow);
+  background-color: var(--grey);
   color: var(--brown);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   transform: scale(0.95);
@@ -161,7 +174,7 @@ nav .nav-link.active {
 
 .btns:active {
   font-family: var(--text-font) !important;
-  background-color: var(--yellow) !important;
+  background-color: var(--grey) !important;
   color: var(--brown) !important;
   border: solid 2px var(--brown) !important;
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1) !important;
@@ -229,6 +242,7 @@ nav .nav-link.active {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
+
   .center-container {
     height: auto;
     display: flex;
@@ -256,6 +270,15 @@ nav .nav-link.active {
     max-height: 300px;
     border-radius: 5px;
     border: 4px solid var(--brown2);
+    object-fit: cover;
+  }
+
+  .icon img {
+    width: 20px; /* Adjust this value as needed */
+    height: 20px; /* Maintain a fixed height for consistency */
+    border-radius: 5px;
+    object-fit: cover;
+    border: none;
   }
 
   .bar {
@@ -277,6 +300,28 @@ nav .nav-link.active {
     font-size: 1rem;
     padding: 12px;
   }
+
+  .custom-span {
+    background-color: var(--beige);;
+    color: var(--brown);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid var(--brown);
+    padding: 10px 15px;
+}
+
+.input-group .form-control {
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--brown);
+    box-shadow: none;
+}
+
+.input-group .form-control:focus {
+    box-shadow: 0 0 5px var(--brown2);
+    border-color: var(--brown2);
+}
+
 
   .btns {
     width: 100%;
